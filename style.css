@@ -1,0 +1,167 @@
+:root {
+    --quiet-color: #f73c3c;
+    --medium-color: #ffd000;
+    --loud-color: #00ff2a;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fffdf9;
+    color: #2c2c2c;
+    margin: 0;
+    transition: 0.3s
+}
+body.dark-mode {
+    background: #2c2c2c;
+    color: #fffdf9;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: linear-gradient(to right, #f73c3c, #ffc400);
+    transition: 0.3s;
+    color: #fffdf9;
+}
+
+.navbar-dark {
+    background: #4d4d4d;
+}
+
+/* Syntax: y-position, x-position, blur-radius, color */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 5px 5px px #000000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Grid Layout */
+.title-info {
+    text-align: center;
+    margin: 0px;
+}
+
+.sound-grid {
+    padding: 20px;
+}
+
+.utility-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.key {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.key-label-l {
+    color: var(--loud-color);
+}
+
+.key-label-m {
+    color: var(--medium-color);
+}
+
+.key-label-q {
+    color: var(--quiet-color);
+}
+
+.sound-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.show-overlay {
+    display: flex;
+}
+
+/* Button Styling */
+
+.btn {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn.dark-mode {
+    color: #fffdf9;
+}
+
+#l {
+    border: 2px solid var(--loud-color);
+}
+
+#m {
+    border: 2px solid var(--medium-color);
+}
+
+#q {
+    border: 2px solid var(--quiet-color);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+#seperator {
+    height: 2px;
+    background: #ccc;
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+#shortcuts {
+    margin-top: 30px;
+    text-align: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}

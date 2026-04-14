@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="light-mode">
+        <nav class="navbar">
+            <div class="logo">LearnTree</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shortcuts">Shortcuts</a></li>
+            </ul>
+        </nav>
+        <div id="home">
+            <div id="image-overlay" class="overlay">
+                <img id="popup-image" src="edp-noises/default.png" alt="EDP">
+            </div>
+            <div class="container">
+                <div class="title-info">
+                    <h1>Learning Tools</h1>
+                </div>
+                <div class="utility-options">
+                    <button onclick="toggleDarkMode()" class="dark-light-toggle">dark mode</button>
+                    <button onclick="toggleMultiSound()" class="multi-sound-toggle">multi-sound mode</button>
+                    <button onclick="toggleStopSounds()" class="stop-sounds-toggle">stop sounds</button>
+                </div>
+                <div class="key">
+                    <p class="key-label-l">Loud</p>
+                    <p class="key-label-m">Medium</p>
+                    <p class="key-label-q">Quiet</p>
+                </div>
+                <div class="sound-grid" id="soundboard">
+                    <button class="btn" onclick="playSound('fah')" id="l">FAHHHH
+                        <audio id="fah" src="fahhhhhhhhhhhhhh.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('neighbours')" id="m">Neighbours
+                        <audio id="neighbours" src="i-hate-neighbours.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('efn-456')" id="m">efn #456
+                        <audio id="efn-456" src="efn-456.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('hub-intro')" id="q">Hub Intro
+                        <audio id="hub-intro" src="hub-intro-sound.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('kim-jong-un-brainrot')" id="m">Kim Jong GOON</button>
+                    <audio id="kim-jong-un-brainrot" src="kim-jong-un-brainrot.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('metal-pipe')" id="l">Metal Pipe clang
+                        <audio id="metal-pipe" src="metal-pipe-clang.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('dry-fart')" id="m">Dry fart
+                        <audio id="dry-fart" src="dry-fart.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('ishowspeed')" id="l">Ishowspeed
+                        <audio id="ishowspeed" src="ishowspeed-ni-talking-ben.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('efh')" id="q">EFH
+                        <audio id="efh" src="efh.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('67')" id="m">67
+                        <audio id="67" src="67.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('ninini')" id="m">Neighbour x10
+                        <audio id="ninini" src="neighbourneighbour.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('first-born-child')" id="q">I guess they want my First Born
+                        Child too?
+                        <audio id="first-born-child" src="first-born-child.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('jackpot')" id="l">I just hit the jackpot
+                        <audio id="jackpot" src="i-just-hit-the-jackpot.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('imam-ali-bashar')" id="l">Imam ali bashar
+                        <audio id="imam-ali-bashar" src="imam-ali-bashar.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('god-syria-bashar')" id="l">God Syria bashar
+                        <audio id="god-syria-bashar" src="god-syria-bashar.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('jota-habita-habita')" id="l">Jota Habita Habita
+                        <audio id="jota-habita-habita" src="jotahabitahabita.mp3"></audio>
+                    </button>
+                    <button class="btn" onclick="playSound('bone-crack')" id="m">Bone Crack
+                        <audio id="bone-crack" src="bone-crack.mp3"></audio>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <div id="seperator"></div>
+        <div id="shortcuts">
+            <h2>Shortcuts</h2>
+            <p><span class="shortcut-key">S</span> - Stop all sounds</p>
+            <p><span class="shortcut-key">D</span> - Toggle dark mode</p>
+            <p><span class="shortcut-key">M</span> - Toggle multi-sound mode</p>
+            <p><span class="shortcut-key">N</span> - Play special sounds</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
