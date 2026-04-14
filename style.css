@@ -38,6 +38,11 @@ body.dark-mode {
     text-shadow: 5px 5px px #000000;
 }
 
+.domain-suffix {
+    font-size: 1.2rem;
+    color: #fffdf9;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
