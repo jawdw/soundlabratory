@@ -1,7 +1,7 @@
 
 const toggleButton = document.querySelector('.dark-light-toggle');
 const webBody = document.body;
-
+var multiSoundMode = false;
 
 
 function toggleDarkMode() {
@@ -21,11 +21,15 @@ function toggleDarkMode() {
 }
 
 function toggleMultiSound() {
-    const multiSoundButtons = document.querySelectorAll('.multi-sound-toggle');
+    const multiSoundButton = document.querySelector('.multi-sound-toggle');
 
-    multiSoundButtons.forEach(button => {
-        button.classList.toggle('active');
-    });
+    if (!multiSoundMode) {
+        multiSoundMode = true;
+        multiSoundButton.textContent = 'single-sound mode';
+    } else {
+        multiSoundMode = false;
+        multiSoundButton.textContent = 'multi-sound mode';
+    }
 }
 
 function toggleStopSounds() {
@@ -37,7 +41,9 @@ function toggleStopSounds() {
 }
 
 function playSound(id) {
-    toggleStopSounds(); // Stop any currently playing sounds before starting a new one
+    if (!multiSoundMode) {
+        toggleStopSounds();
+    }
     const audio = document.getElementById(id);
 
     audio.currentTime = 0;
@@ -48,32 +54,26 @@ window.addEventListener('keydown', (e) => {
         e.preventDefault();
         toggleStopSounds();
     } else if (e.key === 'n' || e.key === 'N') {
-        // List your filenames here exactly as they are in the folder
         const soundFiles = ['1.mp3', '2.mp3', '3.mp3', '4.mp3', '5.mp3'];
         const imageFile = ['default.png'];
 
         const overlay = document.getElementById('image-overlay');
         const popupImg = document.getElementById('popup-image');
 
-        // Create a reusable audio object
         const randomAudio = new Audio();
 
         function playRandomChaos() {
-            // 1. Pick random sound and image
             const randomIdx = Math.floor(Math.random() * soundFiles.length);
             const soundPath = `${soundFiles[randomIdx]}`;
             const imagePath = `${imageFile}`;
 
-            // 2. Set sources and play
             randomAudio.src = soundPath;
             popupImg.src = imagePath;
 
             randomAudio.play();
 
-            // 3. Show the image
             overlay.classList.add('show-overlay');
 
-            // 4. Hide the image automatically when the sound ends
             randomAudio.onended = () => {
                 overlay.classList.remove('show-overlay');
             };
@@ -82,5 +82,7 @@ window.addEventListener('keydown', (e) => {
         playRandomChaos();
     } else if (e.key === 'd' || e.key === 'D') {
         toggleDarkMode();
+    } else if (e.key === 'm' || e.key === 'M') {
+        toggleMultiSound();
     }
 });
