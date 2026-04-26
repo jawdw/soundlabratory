@@ -31,7 +31,6 @@ body.dark-mode {
     background: #4d4d4d;
 }
 
-/* Syntax: y-position, x-position, blur-radius, color */
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -110,7 +109,6 @@ body.dark-mode {
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
     display: none;
-    /* Hidden by default */
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -124,8 +122,6 @@ body.dark-mode {
 .show-overlay {
     display: flex;
 }
-
-/* Button Styling */
 
 .btn {
     background: rgba(255, 255, 255, 0.1);
@@ -150,6 +146,11 @@ body.dark-mode {
 
 #q {
     border: 2px solid var(--quiet-color);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
